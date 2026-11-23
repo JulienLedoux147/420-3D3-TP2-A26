@@ -11,9 +11,26 @@ class StrategieAffichage(ABC):
 class AffichageCompact(StrategieAffichage):
 
     def formater(self, produit) -> dict:
-        pass
+        return {
+            "id": produit.id,
+            "nom": produit.nom,
+            "prix_total": produit.prix_total(),
+            "image_url": produit.image_url,
+            "est_bundle": produit.est_bundle(),
+        }
 
 class AffichageDetaille(StrategieAffichage):
 
     def formater(self, produit) -> dict:
-        pass
+        donnees = {
+            "id": produit.id,
+            "nom": produit.nom,
+            "prix_total": produit.prix_total(),
+            "image_url": produit.image_url,
+            "description": produit.description,
+            "nb_ventes": produit.nb_ventes,
+            "est_bundle": produit.est_bundle(),
+        }
+        if produit.est_bundle():
+            donnees["nb_items"] = produit.nb_items()
+        return donnees
