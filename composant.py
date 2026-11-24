@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Composant(self, ABC):
+class Composant(ABC):
     def __init__(self, id: int, nom: str, description: str, prix: float, nb_ventes: int, image_url: str):
         self.id = id
         self.nom = nom
