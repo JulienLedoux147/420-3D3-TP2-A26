@@ -1,5 +1,4 @@
-from abc import ABC, abstractmethod
+from composant import Composant
 
-@abstractmethod
-class Feuille(ABC):
+class Feuille(Composant):
     pass
