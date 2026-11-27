@@ -1,4 +1,8 @@
-class ProduitNumerique:
+from composite import Composite
+from feuille import Feuille
+
+
+class ProduitNumerique(Feuille):
     """Un jeu ou un DLC individuel."""
 
     def __init__(self, id: int, nom: str, description: str, prix: float,
@@ -20,7 +24,7 @@ class ProduitNumerique:
         return False
 
 
-class Bundle:
+class Bundle(Composite):
     """Un regroupement de produits numériques ou d'autres bundles."""
 
     def __init__(self, id: int, nom: str, description: str, prix: float,

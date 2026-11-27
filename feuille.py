@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
 
 @abstractmethod
-class Feuille:
+class Feuille(ABC):
     pass
