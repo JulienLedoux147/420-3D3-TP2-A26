@@ -21,3 +21,6 @@ class Composant(ABC):
     @abstractmethod
     def est_bundle(self) -> bool:
         pass
+
+    def prix_exact(self) -> float:
+        return self.prix_total()
